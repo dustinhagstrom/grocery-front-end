@@ -1,0 +1,12 @@
+.header-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 255, 170, 0.966);
+    font-size: 28px;
+    color: rgb(255, 0, 255);
+    border-bottom: 1px solid orchid;
+    
+}
