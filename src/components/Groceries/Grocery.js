@@ -137,8 +137,30 @@ export class Grocery extends Component {
     }
   };
 
-  sortByDate = () => {};
-  sortByPurchased = () => {};
+  sortByDate = async (sortOrder) => {
+    try {
+      let sortedGroceryArray = await axios.get(
+        `${URL}/api/grocery/sort-groceries-date?sort=${sortOrder}`
+      );
+      this.setState({
+        groceryList: sortedGroceryArray.data.payload,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  sortByPurchased = async (isPurchasedOrder) => {
+    try {
+      let sortedGroceryArray = await axios.get(
+        `${URL}/api/grocery/sort-groceries-by-purchased?purchased=${isPurchasedOrder}`
+      );
+      this.setState({
+        groceryList: sortedGroceryArray.data.payload,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   render() {
     return (
@@ -172,19 +194,27 @@ export class Grocery extends Component {
         <div className="sort-buttons">
           <Button
             buttonName="Sort by date added- Oldest to Newest"
-            // clickFunc={() => {this.sortByDate("")}}
+            clickFunc={() => {
+              this.sortByDate("asc");
+            }}
           />
           <Button
             buttonName="Sort by date added- Newest to Oldest"
-            // clickFunc={() => {this.sortByDate("")}}
+            clickFunc={() => {
+              this.sortByDate("desc");
+            }}
           />
           <Button
             buttonName="Sort by Purchased"
-            // clickFunc={() => {this.sortByPurchased("")}}
+            clickFunc={() => {
+              this.sortByPurchased("true");
+            }}
           />
           <Button
             buttonName="Sort by Not Purchased"
-            // clickFunc={() => {this.sortByPurchased("")}}
+            clickFunc={() => {
+              this.sortByPurchased("false");
+            }}
           />
         </div>
         <table>
