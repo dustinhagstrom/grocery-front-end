@@ -47,11 +47,11 @@ export class Grocery extends Component {
           <button>Sort by Purchased</button>
           <button>Sort by Not Purchased</button>
         </div>
-        <ul>
+        <table>
           {this.state.groceryList.map((item) => {
             return <Grocerylist item={item} key={item._id} />;
           })}
-        </ul>
+        </table>
       </div>
     );
   }

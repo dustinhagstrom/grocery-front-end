@@ -4,6 +4,11 @@
     align-items: center;
 }
 
+table {
+    width: 100%;
+    border-collapse: none;
+    text-align: center;
+}
 
 .grocery-input {
     width: 300px;
