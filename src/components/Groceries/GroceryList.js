@@ -81,8 +81,6 @@ export class GroceryList extends Component {
             <Button
               buttonName="Purchased"
               clickFunc={() => handlePurchasedByID(_id, purchased)}
-              // _id={_id}
-              // purchased={purchased}
             />
           </td>
           <td>

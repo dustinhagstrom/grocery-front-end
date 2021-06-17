@@ -66,7 +66,7 @@ export class Grocery extends Component {
             ...this.state.groceryList,
             {
               grocery: createdGrocery.data.payload.grocery,
-              _id: createdGrocery.data.payload._id, //might be an error here. plus maybe more data to manipulate
+              _id: createdGrocery.data.payload._id,
             },
           ];
           this.setState({
@@ -175,7 +175,7 @@ export class Grocery extends Component {
           <form onSubmit={this.handleOnSubmit}>
             <input
               className="grocery-list-input"
-              name="groceryInput" //match to state
+              name="groceryInput"
               type="text"
               onChange={this.handleGroceryOnChange}
               value={this.state.groceryInput}

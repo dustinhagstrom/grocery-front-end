@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-function Button({ cssid, buttonName, clickFunc = () => {} }) {
+function Button({ buttonName, clickFunc = () => {} }) {
   return (
     <React.Fragment>
       <button
         onClick={() => {
           clickFunc();
         }}
-        id={cssid}
       >
         {buttonName}
       </button>
